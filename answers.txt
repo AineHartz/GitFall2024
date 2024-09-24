@@ -1,0 +1,12 @@
+a) 13, checked with a oneline graph.
+b) 7:40pm, 9/23/2024.
+c) A command like git rev-list -n 1 --before="2020-06-01" main would work.
+d) There's no src file, but if we're talking about the .git file, I'm still not sure. I'm using git log --stat, but that seems like too much information to reasonably sort through.
+e) None, there was no REMOVE.txt file in the github repo.
+f) git log is a list of every commit made, while git status compares your working files with the repository and tells you what it's tracking and what it's not.
+g) shortlog is the same as log, except it only includes the descriptions and the name of the person who made the commit.
+h) git log --oneline -- Main.java
+i) git log --follow -p -- Main.java
+j) git log --grep="account"
+k) git log --author="Author Name"
+l) git log --author="Lauren" --since="2014-01-05" --until="2024-01-14"
