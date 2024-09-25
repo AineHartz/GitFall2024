@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.util.List;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
@@ -12,7 +13,7 @@ public class Deck
     private Map<Integer, Integer> histogram;
     
     
-    //A constructor which intializes the deck to a blank slate. The for loop just creates a slot in the map for each energy cost.
+    //A constructor which initializes the deck to a blank slate. The for loop just creates a slot in the map for each energy cost.
     public Deck() 
     {
         this.cards = new HashMap<>();
@@ -34,7 +35,7 @@ public class Deck
         return rand.nextInt(900000000) + 100000000; // Ensure it's a 9-digit number
     }
 
-    // Method to add valid cards to the deck
+    // Method to add valid cards to the deck. Takes a string with the card name and an int with the cost as input, returns nothing, but adds the card to the card list and the energy histogram.
     public void addCard(String card, int cost) 
     {
         if (isValidCard(card, cost)) 
@@ -50,26 +51,31 @@ public class Deck
         }
     }
 
-    // Method to check if the card is valid
-    private boolean isValidCard(String card, int cost) {
+    // Method to check if the card is valid. Takes the card name and the int cost as input, returns true or false for if the card is valid or not. 
+    private boolean isValidCard(String card, int cost) 
+    {
         // Check if card is null
-        if (card == null) {
+        if (card == null) 
+        {
             return false;
         }
         
         // Check if card name is empty or contains only spaces/tabs
         String trimmedCard = card.trim();
-        if (trimmedCard.isEmpty()) {
+        if (trimmedCard.isEmpty()) 
+        {
             return false;
         }
         
         // Check if cost is within valid range (0-6)
-        if (cost < 0 || cost > 6) {
+        if (cost < 0 || cost > 6) 
+        {
             return false;
         }
         
         return true; // All checks passed, so the card is valid
-
+    }
+    
     // Method to read the deck from file
     public void readFromFile(String fileName) throws FileNotFoundException 
     {

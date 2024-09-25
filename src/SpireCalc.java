@@ -9,7 +9,7 @@ public class SpireCalc
         
         try 
         {
-            deck.readFromFile("deck.txt");  // Adjust file name here
+            deck.readFromFile("C:\\Users\\Ryan Hartz\\Desktop\\GitFall2024\\src\\deck.txt");  // Adjust file name here
             String fileName = "SpireDeck " + deck.getDeckID() + ".pdf";
             deck.generatePDFReport(fileName);
             System.out.println("PDF Report generated: " + fileName);
